@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Menus -->
+	<bean id="systemMenu" class="devinfosys.view.Menu" >
+    	<property name="introduction" value="Welcome to the Project Management Tool. Type the number corresponding to the desired operation and push enter:"/>
+   		<property name="menuItemLabels">
+    		<list>
+    			<value>Manage Developers</value>
+    			<value>Manage Projects</value>
+    			<value>Manage Developer Project Assignments</value>
+    		</list>
+    	</property>
+    	<property name="menuItems">
+    		<list>
+    			<ref bean="manageDevelopersMenu"/>
+    			<ref bean="manageProjectsMenu"/>
+    			<ref bean="manageAssignmentsMenu"/>
+    		</list>
+    	</property>
+   		<property name="console" ref="console"/>
+    </bean>
+    <bean id="manageDevelopersMenu" class="devinfosys.view.Menu" >
+    	<property name="introduction" value="Type the number corresponding to the desired operation and push enter:"/>
+    	<property name="menuItemLabels">
+    		<list>
+    			<value>Create Developer</value>
+    			<value>Update Developer</value>
+    			<value>Delete Developer</value>
+    			<value>View Developers</value>
+    		</list>
+    	</property>
+    	<property name="menuItems">
+    		<list>
+    			<ref bean="developerCreatorController"/>
+    			<ref bean="developerUpdaterController"/>
+    			<ref bean="developerDeleterController"/>
+    			<ref bean="developerViewerController"/>
+    		</list>
+    	</property>
+    	<property name="console" ref="console"/>
+    </bean>
+    <bean id="manageProjectsMenu" class="devinfosys.view.Menu" >
+    	<property name="introduction" value="Type the number corresponding to the desired operation and push enter:"/>
+    	<property name="menuItemLabels">
+    		<list>
+    			<value>Create Project</value>
+    			<value>Update Project</value>
+    			<value>Delete Project</value>
+    			<value>View Projects</value>
+    		</list>
+    	</property>
+    	<property name="menuItems">
+    		<list>
+    			<ref bean="projectCreatorController"/>
+    			<ref bean="projectUpdaterController"/>
+    			<ref bean="projectDeleterController"/>
+    			<ref bean="projectViewerController"/>
+    		</list>
+    	</property>
+    	<property name="console" ref="console"/>
+    </bean>
+    <bean id="manageAssignmentsMenu" class="devinfosys.view.Menu" >
+    	<property name="introduction" value="Type the number corresponding to the desired operation and push enter:"/>
+    	<property name="menuItemLabels">
+    		<list>
+    			<value>Assign Developer to Project</value>
+    			<value>Remove Developer from Project</value>
+    			<value>View Developers Assigned to a Project</value>
+    		</list>
+    	</property>
+    	<property name="menuItems">
+    		<list>
+    			<ref bean="assignmentCreatorController"/>
+    			<ref bean="assignmentDeleterController"/>
+    			<ref bean="assignmentViewerController"/>
+    		</list>
+    	</property>
+    	<property name="console" ref="console"/>
+    </bean>
+    
+    <!-- Developer Controllers -->
+	<bean id="developerCreatorController" class="devinfosys.controller.developer.DeveloperCreatorController" >
+    	<property name="console" ref="console"/>
+    	<property name="developerDAO" ref="developerDAO"/>
+    	<property name="developerTypeDAO" ref="developerTypeDAO"/>
+    </bean>
+    <bean id="developerUpdaterController" class="devinfosys.controller.developer.DeveloperUpdaterController" >
+    	<property name="console" ref="console"/>
+    	<property name="developerDAO" ref="developerDAO"/>
+    </bean>
+    <bean id="developerDeleterController" class="devinfosys.controller.developer.DeveloperDeleterController" >
+    	<property name="console" ref="console"/>
+    	<property name="developerDAO" ref="developerDAO"/>
+    </bean>
+    <bean id="developerViewerController" class="devinfosys.controller.developer.DeveloperViewerController" >
+    	<property name="console" ref="console"/>
+    	<property name="developerDAO" ref="developerDAO"/>
+    </bean>
+    
+    <!-- Project Controllers -->
+	<bean id="projectCreatorController" class="devinfosys.controller.project.ProjectCreatorController" >
+    	<property name="console" ref="console"/>
+    	<property name="projectDAO" ref="projectDAO"/>
+    	<property name="projectTypeDAO" ref="projectTypeDAO"/>
+    </bean>
+    <bean id="projectUpdaterController" class="devinfosys.controller.project.ProjectUpdaterController" >
+    	<property name="console" ref="console"/>
+    	<property name="projectDAO" ref="projectDAO"/>
+    </bean>
+    <bean id="projectDeleterController" class="devinfosys.controller.project.ProjectDeleterController" >
+    	<property name="console" ref="console"/>
+    	<property name="projectDAO" ref="projectDAO"/>
+    </bean>
+    <bean id="projectViewerController" class="devinfosys.controller.project.ProjectViewerController" >
+    	<property name="console" ref="console"/>
+    	<property name="projectDAO" ref="projectDAO"/>
+    </bean>
+    
+    <!-- Assignment Controllers -->
+	<bean id="assignmentCreatorController" class="devinfosys.controller.assignment.AssignmentCreatorController" >
+    	<property name="console" ref="console"/>
+    	<property name="developerProjectAssignmentDAO" ref="developerProjectAssignmentDAO" />
+    </bean>
+    <bean id="assignmentDeleterController" class="devinfosys.controller.assignment.AssignmentDeleterController" >
+    	<property name="console" ref="console"/>
+    	<property name="developerProjectAssignmentDAO" ref="developerProjectAssignmentDAO"/>
+    </bean>
+    <bean id="assignmentViewerController" class="devinfosys.controller.assignment.AssignmentViewerController" >
+    	<property name="console" ref="console"/>
+    	<property name="developerProjectAssignmentDAO" ref="developerProjectAssignmentDAO"/>
+    </bean>
+    
+    <!-- DAOs -->
+    <bean id="developerDAO" class="devinfosys.dao.DeveloperExampleDAO" />
+    <bean id="projectDAO" class="devinfosys.dao.ProjectExampleDAO" />
+    <bean id="developerTypeDAO" class="devinfosys.dao.DeveloperTypeExampleDAO" />
+    <bean id="projectTypeDAO" class="devinfosys.dao.ProjectTypeExampleDAO" />
+    <bean id="developerProjectAssignmentDAO" class="devinfosys.dao.DeveloperProjectAssignmentExampleDAO" >
+    	<property name="developerDAO" ref="developerDAO"/>
+    	<property name="projectDAO" ref="projectDAO"/>
+    </bean>
+	
+	<!-- Utilities -->
+	<bean id="console" class="devinfosys.console.Console" />
+
+</beans>

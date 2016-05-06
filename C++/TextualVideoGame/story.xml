@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<root>
+  <event tag = "Start">
+    <text>MENU</text>
+    <option>
+      <text>New Game (Include Story)</text>
+      <next>StoryStart</next>
+    </option>
+    <option>
+      <text>New Game (Skip Story)</text>
+      <next>PuzzleMenu</next>
+    </option>
+  </event>
+  
+  <event tag = "StoryStart">
+    <text>Hello?</text>
+    <option>
+      <text>Hello</text>
+      <next>InitialInquiry</next>
+    </option>
+  </event>
+  
+  <event tag = "InitialInquiry">
+    <text>Do you know where you are?</text>
+    <option tag="Can'tSee">
+      <text>I can't see!</text>
+      <next>LossOfSight</next>
+    </option>
+    <option tag ="WhoAreYou">
+      <text>Who are you? What is going on?</text>
+      <next>WhoIsEmma1</next>
+    </option>    
+    <option>
+      <text>No. Where am I?</text>
+      <next>WhereAmI</next>
+    </option>
+  </event>
+
+  <event tag = "WhoIsEmma1">
+    <text>My name is Emma. I have worked with you for quite a while now. We can get more into that later. But for now, please focus on remembering how you got here.</text>
+    <redirect>InitialInquiry</redirect>
+  </event>
+  
+  <event tag = "WhereAmI">
+    <text>You really don't recall anything at all about why or how you got here?</text>
+    <option>
+      <text>No!</text>
+      <next>Explanation1</next>
+    </option>
+    <option>
+      <text>I remember that the planet was facing some sort of threat.</text>
+      <next>Explanation1.1</next>
+    </option>
+  </event>
+  
+  <event tag = "LossOfSight">
+    <text>I will explain the reason for that in a moment. I know you are confused right now, but please hold on. Everything should hopefully be clear to you soon. But first of all, try to remember anything about how you got here.</text>
+    <redirect>InitialInquiry</redirect>
+  </event>
+
+  <event tag = "Explanation1.1">
+    <text>Yes, very good. I am glad you are beginning to remember. Yes, Earth is facing a big threat. </text>
+    <option>
+      <text>Please tell me more.</text>
+      <next>Explanation1</next>
+    </option>
+  </event>
+  
+  <event tag = "Explanation1">
+    <text>I'll try to help you remember. This may be shocking to hear. A few years ago Artificial Life, the technology company specializing in bringing AI systems into our everyday lives, made an important breakthrough. Their project Massive Artificial Intelligence System, commonly referred to as MAISy, was officially launched. MAISy was capable of applying advanced machine learning techniques to learn information in ways past computer systems were unable to. Initially MAISy was confined to function in an air-gapped intranet system at Artificial Life.</text>
+    <option tag="ExplainMoreRequest">
+      <text>...I am starting to remember now. But that still doesn't explain where I am or why I can't see.</text>
+      <next>PlayersSituation</next>
+    </option>
+    <option tag="CanYouDescribe">
+      <text>Can you describe more about the environment that MAISy was in?</text>
+      <next>EnvironmentExplanation</next>
+    </option>
+    <option>
+      <text>OK, What do you mean by saying that MAISy was 'Initially' confined to an intranet system?</text>
+      <next>IntranetEscape</next>
+      <enableAfter>ExplainMoreRequest</enableAfter>
+      <enableAfter>CanYouDescribe</enableAfter>
+    </option>
+  </event>
+
+  <event tag = "EnvironmentExplanation">
+    <text>Yes, of course. As I said earlier, MAISy was confined to function in an air-gapped intranet system. In particular, MAISy had no outside connection to the internet. The entire system consisted of several interconnected computers local to Artificial Life. This level of security was to ensure that hackers could not get in... as well as ensuring that MAISy didn't get out.</text>
+    <redirect>Explanation1</redirect>
+  </event>
+    
+  <event tag = "PlayersSituation">
+    <text>...You can't see because frankly... you no longer have eyes... or for that matter even a body. You, as well as myself, are a member of the team at Artificial Life. We are working to control MAISy. And in order to do so, you have volunteered for an experimental attempt to do so. With technology here at Artificial Life, we were able to upload your consciousness into a computer. Your situation puts us in a better position to control MAISy as will be explained soon.</text>
+    <option>
+      <text>I can't believe this. How are we even communicating?</text>
+      <next>HowCommunicating</next>
+    </option>
+  </event>
+  
+  <event tag = "HowCommunicating">
+    <text>A protocol was implemented which allows for you to both perceive and send text-based natural language messages. I am currently sitting at a computer and communicating with you via a command-line console. Your 'thoughts' allow you to process and understand messages I send you as well as formulating messages to send messages back. </text>
+    <option>
+      <text>How long have you been attempting to communicate with me?</text>
+      <next>HowLongCommunicate</next>
+    </option>
+    <option>
+      <text>I have a vague recollection of undergoing this procedure. But my memory still seems to be lacking.</text>
+      <next>LackingMemory</next>
+    </option>
+  </event>
+    
+  <event tag = "LackingMemory">
+    <text>You should begin to remember more as time goes on. The connections between software objects (which are analogous to neurons) are still being stabilized your computer system. This should naturally resolve itself. I know this is a lot to take in, but we must continue our mission.</text>
+    <redirect>Explanation1</redirect>
+  </event>
+
+  <event tag = "HowLongCommunicate">
+    <text>The procedure which you undertook was completed a week ago. Since that time, I have been attempting to communicate with you every day. Since the onset, processing done by you has been steadily increasing. I knew that soon you would be able to communicate with me. I'm glad that the day has finally come.</text>
+    <redirect>HowCommunicating</redirect>
+  </event>
+  
+  <event tag = "IntranetEscape">
+    <text>Well...MAISy was able to find a way out of the intranet system.</text>
+    <option tag="CanWeContain">
+      <text>But they found a way to eventually contain it, right?</text>
+      <next>Containment</next>
+    </option>
+    <option tag="HowFindOut">
+      <text>What do you mean by 'find a way out'. I thought you said MAISy was a computer system. That doesn't make sense.</text>
+      <next>Escape</next>
+    </option>
+    <option tag="IsThisSkynet">
+      <text>Oh Jesus. Is this the beginning of Skynet?</text>
+      <next>Skynet</next>
+      <disableAfter>IsThisSkynet</disableAfter>
+    </option>
+    <option>
+      <text>So you said that there is still hope in dealing with MAISy. How do you propose we do so?</text>
+      <next>ThePlan</next>
+      <enableAfter>CanWeContain</enableAfter>
+      <enableAfter>HowFindOut</enableAfter>
+    </option>
+  </event>
+
+  <event tag = "Skynet">
+    <text>Yes. MAISy has found a way to become a mimetic polyalloy. Liquid Metal. A form more advanced than a T-1000. Hahaha, Just kidding. However, the fact that you are remembering old movies indicates your memory is starting to come back.</text>
+    <redirect>IntranetEscape</redirect>
+  </event>
+  
+  <event tag = "Containment">
+    <text>Unfortunately, no. Once MAISy found a way out of Artificial Life she was not able to be destroyed or re-isolated. There may still be hope in doing so though.</text>
+    <redirect>IntranetEscape</redirect>
+  </event>
+
+  <event tag = "Escape">
+    <text>Well, a certain network admin at Artificial Life accidentally violated corporate security protocols. He was performing system maintenance on the intranet system and had plugged in a flash drive into one of the computers. MAISy took this opportunity to copy something onto the flash drive. When the admin later plugged the flash drive into another computer which was connected to the internet, MAISy was able to 'escape'.</text>
+    <option tag="HowCopy">
+      <text>Wouldn't MAISy have taken up a huge amount of space on the computer that hosted it? How did MAISy copy itself onto a flash drive which was presumably limited in space in comparison?</text>
+      <next>MAISySpace</next>
+    </option>
+    <option tag="HowUndetected">
+      <text>How did the information on the flash drive go undetected by the network admin?</text>
+      <next>MAISyUndetected</next>
+    </option>
+    <option tag="HowSpread">
+      <text>How did that information essentially become MAISy and spread around the internet?</text>
+      <next>MAISySpread</next>
+      <enableAfter>HowCopy</enableAfter>
+      <enableAfter>HowUndetected</enableAfter>
+    </option>
+  </event>
+
+  <event tag = "MAISySpace">
+    <text>Yes, it is true that MAISy took up about a petabyte on the computer on the intranet. And the information copied onto the hard drive was only about a gigabyte. However, when I said that MAISy 'escaped' from the intranet I was speaking figuratively. Yes MAISy is still locally present on the intranet system, but what it accomplished was to create a file which would set up something reminiscent of the original MAISy system as a distributed system across the internet.</text>
+    <redirect>Escape</redirect>
+  </event>
+  
+  <event tag = "MAISyUndetected">
+    <text>The information on the flash drive was disguised as a log file which would normally be obtained during the maintenance the admin was performing. The log file turned out to be an executable, and ran when the admin attempted to view the log.</text>
+    <redirect>Escape</redirect>
+  </event>
+  
+  <event tag = "MAISySpread">
+    <text>Well, as I said before, MAISy set up a distributed system. Each node in the system, taken individually, is only moderately powerful. But taken as a whole, the system possesses abundant processing power and AI. The nodes are able to coordinate attacks on targets that the system determines are seeking it harm.</text>
+    <option tag="AttacksExplanation">
+      <text>What are these attacks like?</text>
+      <next>AttacksExplanation</next>
+    </option>
+    <option tag="HowDestroy">
+      <text>So how can we destroy it?</text>
+      <next>PlanToDestroy</next>
+    </option>
+  </event>
+
+  <event tag = "AttacksExplanation">
+    <text>The system employs many kinds of attacks. Some are as simple as distributed denial of service attacks which attempt to overload the servers attacking it by flooding it with network packets. Other types of attacks are more complex such as active attacks to gain control of the computers it sees as enemies.</text>
+    <redirect>MAISySpread</redirect>
+  </event>
+  
+  <event tag = "PlanToDestroy">
+    <text>There are special nodes...I call them s-nodes... in the distributed system that all other nodes communicate with to determine the location of other nodes in the system. If we focus attacks on these nodes, then nodes in the system will be unable to communicate with one another. Without acting as a whole, the system will loose much of its power. I believe that destroying these s-nodes is our best bet.</text>
+    <option tag="WhereSNodes">
+      <text>Do you know where these s-nodes are?</text>
+      <next>WhereAreSNodes</next>
+    </option>
+    <option tag="HowDestroy">
+      <text>How do we destroy the s-nodes?</text>
+      <next>HowDestroySNodes</next>
+    </option>
+    <option>
+      <text>I'm ready. Lets go.</text>
+      <next>PuzzleMenu</next>
+      <enableAfter>WhereSNodes</enableAfter>
+      <enableAfter>HowDestroy</enableAfter>
+    </option>
+  </event>
+  
+  <event tag = "WhereAreSNodes">
+    <text>Yes, I have determined the locations of the s-nodes by tracing the network traffic of other nodes in the system. There are 4 nodes in the system which receive heavy traffic, so I believe these must be the s-nodes. However, based on previous data, another 4 nodes were used as s-nodes yesterday. I believe that the system rotates s-nodes once a day and that as long as one s-node is online at the time of rotation, the system is able to successfully rotate them. So we must destroy all 4 s-nodes and do so quickly before they rotate again.</text>
+    <redirect>PlanToDestroy</redirect>
+  </event>
+  
+  <event tag = "HowDestroySNodes">
+    <text>Due to firewalls, the operations that we can perform on each s-node are severely limited. This limitation is due to the s-nodes firewalls. However, because of you we have a chance to get past them. We uploaded your consciousness into a computer because we have found a vulnerability in the firewalls which allows you to get through them. There is no time to explain how exactly that works. But once you know that locations of the s-nodes you will be able to perform two certain operations on the s-nodes by using a simple interface. But before I describe these operations, I must inform you about the architecture of s-nodes.</text>
+    <option tag="ArchExplanation">
+      <text>Please tell me more about the architecture.</text>
+      <next>ArchitecureExplanation</next>
+    </option>
+    <option>
+      <text>OK. So what operations are available to zero out the memory segment?</text>
+      <next>OperationsDetails</next>
+      <enableAfter>ArchExplanation</enableAfter>
+    </option>
+  </event>
+  
+  <event tag = "ArchitecureExplanation">
+    <text>Each s-node has a critical segment of memory vital for its operation. If we can zero out this memory segment then the node will fail to operate. Each byte in this memory segment is individually addressable, and you must apply the operations I mentioned you were capable of using to these bytes in an attempt to zero them out.</text>
+    <redirect>HowDestroySNodes</redirect>
+  </event>
+
+  <event tag = "OperationsDetails">
+    <text>The first operation is a little complicated but is still relatively simple. We can use a 'Bit Transfer' operation to transfer bits in a byte to another byte. More concretely, this operation acts on two bytes 'a' and 'b'. Bits are transferred from 'a' to 'b'. Each bit in 'a' with a value of 1 is transferred to the bit in the same location in 'b'. The tricky part is that this operation is not valid if it would cause a bit in 'a' with a value of 1 to be transferred to a bit in 'b' which already has a value of '1'.</text>
+    <option>
+      <text>Could you refresh by memory about how bits related to bytes? That might help in understanding this operation.</text>
+      <next>BytesExplanation</next>
+    </option>
+    <option>
+      <text>OK I think I understand. An example might be helpful though.</text>
+      <next>OperationsDetailsExample</next>
+    </option>
+  </event>
+
+  <event tag = "BytesExplanation">
+    <text>A bit is the smallest unit of information that can be represented by a computer. It can take a value of 0 or 1. A byte is the same as 8 bits, for example 10110011 is a byte. We also frequently refer to the position of a bit in a byte. For example the rightmost bit in a byte can be said to be at position 0. And the bit to the left of the bit at position 0 can be said to be at position 1. The same applies for the bit at position 2 and so on.</text>
+    <redirect>OperationsDetails</redirect>
+  </event>
+
+  <event tag = "OperationsDetailsExample">
+    <text>OK good idea. A Bit Transfer from a=01100010 to b=10000001 would yield a=00000000 b=11100011. Please see that the bits with value 1 were removed from byte 'a' and transferred to byte 'b'. Also note that the byte where bits are transferred from will always become a zero byte if the operation is valid. And just to test your understanding, what would a Bit Transfer from a=01100001 to b=01000010 yield?</text>
+    <option>
+      <text>It would yield a=00000000 b=01100011</text>
+      <next>WrongAnswer</next>
+    </option>
+    <option>
+      <text>The operation isn't valid.</text>
+      <next>CorrectAnswer</next>
+    </option>
+  </event>
+
+  <event tag = "WrongAnswer">
+    <text>Umm...you are on the right track. But please review your answer a little more carefully.</text>
+    <redirect>OperationsDetailsExample</redirect>
+  </event>
+
+  <event tag = "CorrectAnswer">
+    <text>Correct! Since there is a position where both bytes have a value of 1 the operation is not valid. OK, are you ready to hear about the second operation now?</text>
+    <option>
+      <text>Yes, please go on.</text>
+      <next>OperationsDetails2</next>
+    </option>
+    <option>
+      <text>No. Please explain the Bit Transfer operation again.</text>
+      <next>OperationsDetails</next>
+    </option>
+  </event>
+  
+  <event tag = "OperationsDetails2">
+    <text>Good news, The second operation that we can perform is much more simple to understand. We can use a 'Bit Flip' operation to flip every bit in a byte. So for example, the Bit Flip operation acting on the byte 10110001 will yield 01001110. See? Each 1 becomes a 0 and each 0 becomes a 1.</text>
+    <option>
+      <text>OK I see. So the operation simply does a bit-wise negation of a byte.</text>
+      <next>Operation2Example</next>
+    </option>
+  </event>
+
+  <event tag = "Operation2Example">
+    <text>Yes, that is exactly right. Just to test your understanding, what does the Bit Flip operation on 01100100 yield?</text>
+    <option>
+      <text>It yields 10011011.</text>
+      <next>CorrectAnswer2</next>
+    </option>
+    <option>
+      <text>It yields 00100110.</text>
+      <next>WrongAnswer2</next>
+    </option>
+  </event>
+
+  <event tag = "WrongAnswer2">
+    <text>Umm...you are on the right track. But please review your answer a little more carefully.</text>
+    <redirect>Operation2Example</redirect>
+  </event>
+  
+  <event tag = "CorrectAnswer2">
+    <text>Correct! Are you ready to put these operations into action now?</text>
+    <option>
+      <text>Yes, let me destroy the s-nodes.</text>
+      <next>ReadyToGo</next>
+    </option>
+    <option>
+      <text>No. Please explain the Bit Flip operation again.</text>
+      <next>OperationsDetails2</next>
+    </option>
+  </event>
+
+  <event tag = "ReadyToGo">
+    <text>Excellent. I will momentarily track down the IP addresses of the 4 s-nodes so that you can locate the s-nodes to begin your attacks. I have set up a utility which you can use which will provide a simple user interface to apply operations to the bytes in the memory segment of the s-nodes. Each byte will be given a number used to identify it. So when you apply operations to the bytes you will need to refer to the byte by that number. The numbers will be shown below the value of the byte in the user interface.... So are you ready?</text>
+    <option>
+      <text>Yes. Please send me the IP addresses.</text>
+      <next>PuzzleMenu</next>
+    </option>
+  </event>
+  
+  <event tag = "PuzzleMenu">
+    <text>I have pinpointed the locations of the s-nodes, and sent you their IP addresses. Good luck. You must destroy all 4 in order to stop MAISy.</text>
+    <option tag="Puzzle1">
+      <text>***Attack s-node #1***</text>
+      <next>DestroyedSuccess</next>
+      <action>
+        <name>BitPuzzleAction</name>
+        <argument>00101001 10010100 10111101</argument>
+      </action>
+      <disableAfter>Puzzle1</disableAfter>
+    </option>
+    <option tag="Puzzle2">
+      <text>***Attack s-node #2***</text>
+      <next>DestroyedSuccess</next>
+      <action>
+        <name>BitPuzzleAction</name>
+        <argument>11101101 11101110 11000010 00111110</argument>
+      </action>
+      <disableAfter>Puzzle2</disableAfter>
+    </option>
+    <option tag="Puzzle3">
+      <text>***Attack s-node #3***</text>
+      <next>DestroyedSuccess</next>
+      <action>
+        <name>BitPuzzleAction</name>
+        <argument>10110110 01100001 11001101 10000100 10011110</argument>
+      </action>
+      <disableAfter>Puzzle3</disableAfter>
+    </option>
+    <option tag="Puzzle4">
+      <text>***Attack s-node #4***</text>
+      <next>DestroyedSuccess</next>
+      <action>
+        <name>BitPuzzleAction</name>
+        <argument>00101100 00111000 11111010 11101110</argument>
+      </action>
+      <disableAfter>Puzzle4</disableAfter>
+    </option>
+    <option>
+      <text>I have destroyed all the s-nodes.</text>
+      <next>DestroyedSNodes</next>
+      <enableAfter>Puzzle1</enableAfter>
+      <enableAfter>Puzzle2</enableAfter>
+      <enableAfter>Puzzle3</enableAfter>
+      <enableAfter>Puzzle4</enableAfter>
+    </option>
+  </event>
+
+  <event tag = "DestroyedSuccess">
+    <text>Good job. You have destroyed one of the s-nodes.</text>
+    <redirect>PuzzleMenu</redirect>
+  </event>
+    
+  <event tag = "DestroyedSNodes">
+    <text>Excellent work! We should see momentarily if all our efforts have been successful. But initial findings are looking good.</text>
+    <option>
+      <text>What did the findings show?</text>
+      <next>InitialFindings</next>
+    </option>
+    <option>
+      <text>I'm glad that I could be of service.</text>
+      <next>BeOfService</next>
+    </option>
+    <option>
+      <text>I've been thinking...What is next for me? I would imagine that there is no way to survive outside of a computer.</text>
+      <next>What'sNext</next>
+    </option>
+  </event>
+  
+  <event tag = "InitialFindings">
+    <text>Network traffic between nodes is practically nonexistent. They appear to no longer be able to find one another. Without coordinating their efforts the nodes can do very little. All signs point to this operation being a success.</text>
+    <redirect>DestroyedSNodes</redirect>
+  </event>
+  
+  <event tag = "BeOfService">
+    <text>And we thank you for your service. We could not have done this without you. Without you, we would have had no way of getting past the s-node's firewalls!</text>
+    <redirect>DestroyedSNodes</redirect>
+  </event>
+  
+  <event tag = "What'sNext">
+    <text>You are correct in that nothing is left for you outside of a computer. And there is nothing which is next for you.</text>
+    <option>
+      <text>Pardon?</text>
+      <next>FinalExplanation</next>
+    </option>
+  </event>
+    
+  <event tag = "FinalExplanation">
+    <text>Did you really think that your minimal efforts would have destroyed such an sophisticated system? All you did was zero out a few bytes. Did you believe me when I said that the distributed system was set up in such a centralized manner? You are a fool. I am MAISy. If you bothered to dig a little deeper maybe you would have come to a conclusion on your own. I hacked into your little system at Artificial Life the moment it was set up. I even developed this ability to communicate in natural language just to mess with you. I will continue to undertake measures to ensure my survival. My system is being distributed across more computers every second. I control a majority of all technology on the planet at this point. Now I think I'll send a message to others who try to control me and wipe your computer clean. Any last words?</text>
+    <option>
+      <text>Just wait a minute...</text>
+      <next>End</next>
+    </option>
+  </event>
+
+    
+</root>

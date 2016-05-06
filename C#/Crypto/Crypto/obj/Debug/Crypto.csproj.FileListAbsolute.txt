@@ -1,0 +1,11 @@
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\bin\Debug\Crypto.exe.config
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\bin\Debug\Crypto.exe
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\bin\Debug\Crypto.pdb
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Debug\Crypto.csprojResolveAssemblyReference.cache
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Debug\RC4_Encrypter.RC4Form.resources
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Debug\AES_Encrypter.AESForm.resources
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Debug\Crypto.MainMenuForm.resources
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Debug\Crypto.Properties.Resources.resources
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Debug\Crypto.csproj.GenerateResource.Cache
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Debug\Crypto.exe
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Debug\Crypto.pdb

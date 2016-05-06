@@ -1,0 +1,10 @@
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\bin\Release\Crypto.exe.config
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\bin\Release\Crypto.exe
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\bin\Release\Crypto.pdb
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Release\RC4_Encrypter.RC4Form.resources
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Release\AES_Encrypter.AESForm.resources
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Release\Crypto.MainMenuForm.resources
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Release\Crypto.Properties.Resources.resources
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Release\Crypto.csproj.GenerateResource.Cache
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Release\Crypto.exe
+C:\Users\ice\Desktop\Repo\C#\Crypto\Crypto\obj\Release\Crypto.pdb

@@ -1,0 +1,178 @@
+body {
+   background-color: #98FB98;
+   font-family: Verdena, Arial, sans-serif;
+   color: #006400;
+   height:100%;
+}
+h1 {
+   color: #006400;
+}
+#header {
+   padding: 5px;
+   border-style: solid;
+   border-width: 1px;
+   width: 98%;
+   background-color: #006400;
+   text-align: center;
+   margin-bottom: 0px;
+}
+#container {
+   overflow: hidden;
+   background: #3CB371;
+}
+#mainContent {
+   float: left;
+   width: 83%;
+   padding-left: 2%;
+   background:#98FB98;
+   min-height: 100%;
+}
+#nav {
+   float: left;
+   width: 15%;
+   background:#3CB371;
+   text-align: center;
+   height: 100%;
+      /*
+   margin: 10px;
+   margin-left: 0px;
+   margin-right: 30px;
+   border-style: solid;
+   border-width: 1px;
+   background-color: #3CB371;
+   
+   */
+}
+
+#container td {
+   width: 250px;
+}
+
+#container table {
+   border-collapse: collapse;
+}
+
+#nav a {
+   color: #006400;
+}
+
+.loginUrl {
+   color: #006400;
+}
+
+.webUrl {
+   color: #006400;
+}
+
+.reply {
+   text-align: center;
+}
+
+textarea {
+   resize: none;
+}
+
+td {
+   text-align: center;
+   width: 200px;
+   border-style: solid;
+   border-width: 1px;
+}
+
+td td {
+   border-style: none;
+}
+
+span table {
+   display:inline-table
+}
+
+.commentTable td {
+   border-style: none;
+   border-collapse: collapse;
+}
+
+.editButton {
+   text-align: left;
+}
+
+.imageComment {
+   background-color: #FFFFFF;
+}
+
+.adminComment {
+   width: 99%;
+   height: 60px;
+   margin-bottom: 10px;
+   margin-top: 0px;
+}
+
+.image {
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-top: 20px;
+   margin-bottom: 0px;
+   text-align: center;
+   background-color: #3CB371;
+}
+
+.image img {
+   margin: 0px;
+   padding: 0px;
+   max-width: 800px;
+   height: auto;
+}
+
+.imageComment  {
+   padding: 5px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   border-color: #98FB98;
+   border-style: dashed;
+   border-width: 2px;
+   
+}
+
+.userLabel {
+   text-align: left;
+   margin-top: 10px;
+   margin-bottom: 0px;
+   margin-left: 5px;
+}
+
+.imageComment .commentText {
+   margin-left: 20px;
+}
+
+.commentDate {
+   float: right;
+}
+
+.commentUsername {
+   float: left;
+}
+
+.imageReply {
+   margin-top: 10px;
+   width: 99%;
+   height: 60px;
+}
+
+.imageReplyButton{
+   width: 99%;
+}
+
+.imageBox  table td{
+   border-style: none;
+   border-collapse: collapse;
+}
+
+.imageBox  table {
+   background-color: #3CB371;
+   border-color: #98FB98;
+   border-style: dashed;
+   border-width: 2px;
+   margin-left: 0px;
+   margin-right: 0px;
+   padding-top: 10px;
+}

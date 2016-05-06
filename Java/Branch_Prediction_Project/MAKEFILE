@@ -1,0 +1,22 @@
+all: A2.class LRUQueue.class BHT.class PHT.class PPHT.class TwoLevelBranchPredictorPAp.class TwoLevelBranchPredictorPApTester.class
+
+TwoLevelBranchPredictorPApTester.class: TwoLevelBranchPredictorPApTester.java TwoLevelBranchPredictorPAp.class
+	javac -cp . TwoLevelBranchPredictorPApTester.java
+
+TwoLevelBranchPredictorPAp.class: TwoLevelBranchPredictorPAp.java BHT.class PPHT.class
+	javac -cp . TwoLevelBranchPredictorPAp.java
+
+PPHT.class: PPHT.java PHT.java A2.java
+	javac -cp . PPHT.java
+
+PHT.class: PHT.java
+	javac -cp . PHT.java
+
+BHT.class: BHT.java LRUQueue.java
+	javac -cp . BHT.java
+
+LRUQueue.class: LRUQueue.java
+	javac -cp . LRUQueue.java
+
+A2.class: A2.java
+	javac -cp . A2.java
